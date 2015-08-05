@@ -2,10 +2,11 @@
 
 namespace alexgt9;
 
-class TwitterTest extends \PHPUnit_Framework_TestCase
+class GoogleTest extends \PHPUnit_Framework_TestCase
 {
-	public function testGetUserInfo(){
-		$twitter = new Twitter;
-		$this->assertThat($twitter->getUser( 'alexgt9' ), $this->equalTo('200'));
-	}
+    public function testGetUserInfo()
+    {
+        $api = new Google;
+        $this->assertThat($api->getStatus('alexgt9'), $this->equalTo('200'));
+    }
 }
