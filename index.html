@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Continuous Integration using Github and Travis by alexgt9</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Continuous Integration using Github and Travis</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/alexgt9/integration" class="btn">View on GitHub</a>
+      <a href="https://github.com/alexgt9/integration/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/alexgt9/integration/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="continuous-integration" class="anchor" href="#continuous-integration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Continuous integration</h1>
+
+<h2>
+<a id="create-a-new-repo-in-githubcom" class="anchor" href="#create-a-new-repo-in-githubcom" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new repo in github.com</h2>
+
+<h2>
+<a id="prepare-tests" class="anchor" href="#prepare-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prepare tests</h2>
+
+<ul>
+<li>Create a class that test an api call, check the response code</li>
+</ul>
+
+<h2>
+<a id="get-dependencies" class="anchor" href="#get-dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get dependencies</h2>
+
+<ul>
+<li>Create composer.json file</li>
+<li>Add require-dev for composer</li>
+<li>Add also bin-dir to show how</li>
+<li>Autoload y autoload-dev</li>
+<li>run <code>composer install</code> (explain composer.lock)</li>
+</ul>
+
+<h2>
+<a id="run-tests" class="anchor" href="#run-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run tests</h2>
+
+<ul>
+<li><code>bin/phpunit tests</code></li>
+<li><code>bin/phpunit tests --bootstrap vendor/autoload.php</code></li>
+</ul>
+
+<h2>
+<a id="code" class="anchor" href="#code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code</h2>
+
+<ul>
+<li>Create a class that call to an api using guzzle or wherever</li>
+<li>composer update (explain why)</li>
+<li>Run the tests until pass</li>
+</ul>
+
+<h2>
+<a id="phpunitxml" class="anchor" href="#phpunitxml" aria-hidden="true"><span class="octicon octicon-link"></span></a>phpunit.xml</h2>
+
+<ul>
+<li>Create the file <code>phpunit.xml</code>
+</li>
+<li>Fill it with the bootstrap, colors and the testsuite</li>
+<li>create the file <code>.gitignore</code> for vendor and bin folders</li>
+<li>make the first commit</li>
+</ul>
+
+<h2>
+<a id="travis" class="anchor" href="#travis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Travis</h2>
+
+<ul>
+<li>Explain what is travis travis-ci.com</li>
+<li>Create file <code>.travis.yml</code> with basic configuration to run tests</li>
+<li>Second commit here</li>
+<li>Push changes to github</li>
+<li>Check build passing in travis</li>
+</ul>
+
+<h3>
+<a id="readme-badge" class="anchor" href="#readme-badge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Readme badge</h3>
+
+<ul>
+<li>Get the badge from travis</li>
+<li>Create the file <code>README.md</code>, add an title and the badge</li>
+</ul>
+
+<h2>
+<a id="coverage" class="anchor" href="#coverage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coverage</h2>
+
+<ul>
+<li>Create a new branch for this <code>git checkout -b coverage</code>
+</li>
+<li>Run the tests with coverage <code>bin/phpunit --coverage-clover=coverage.clover</code>
+</li>
+<li>Add the coverage to the <code>phpunit.xml</code>
+</li>
+</ul>
+
+<h3>
+<a id="scrutinizer" class="anchor" href="#scrutinizer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scrutinizer</h3>
+
+<ul>
+<li>Create an account in scrutinizer-ci.com</li>
+<li>Create the file <code>.scrutinizer.yml</code>
+</li>
+<li>Add the configuration for coverage</li>
+<li>Commit and push</li>
+<li>Check scrutinizer check and build in the branch</li>
+<li>Create a pull request and check its status</li>
+<li>Add the badge in the README</li>
+<li>Commit and push</li>
+<li>Check the badge in Github and the commit in the pull request</li>
+<li>Add all the configuration for scrutinizer</li>
+<li>Commit and push</li>
+<li>Add scrutinizer badge</li>
+<li>Commit and push</li>
+<li>Check PR and merge it if possible</li>
+<li>Delete not used branch</li>
+</ul>
+
+<h2>
+<a id="links" class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h2>
+
+<ul>
+<li><a href="https://github.com/rubennorte/eventize">Example repo with Travis for JS</a></li>
+<li><a href="https://github.com/PHPMailer/PHPMailer">Example repo with Travis for PHP</a></li>
+<li><a href="https://igor.io/2013/02/07/composer-stability-flags.html">Stability flags composer</a></li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/alexgt9/integration">Continuous Integration using Github and Travis</a> is maintained by <a href="https://github.com/alexgt9">alexgt9</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
