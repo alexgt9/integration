@@ -3,10 +3,10 @@
         "bin-dir": "bin"
     },
     "require": {
-        "guzzlehttp/guzzle": "4.1.*"
+        "guzzlehttp/guzzle": "~4.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.2.*"
+        "phpunit/phpunit": "~4"
     },
     "autoload": {
         "psr-4": { "alexgt9\\": "src/" }
